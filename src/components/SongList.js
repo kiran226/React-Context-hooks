@@ -1,10 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 const SongList = () => {
+   const[songs,setSongs]= useState([
+        {title:"Bring Back Memories", id:1},
+        {title:"Shape of You", id:2},
+        {title:"Shadow to the life",id:3}
+    ]);
     return ( 
         <div className="song-list">
             <ul>
-                <li>Bring Back Memories</li>
-                <li>Shadow to the life</li>
+                {songs.map((song)=>{
+                    return (<li key={song.id}>{song.title}</li>)
+                })}
             </ul>
         </div>
      );
